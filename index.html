@@ -17,49 +17,45 @@
 </head>
 <body>
 
-  <header>
-    <section class="header-left">
-      <div class="header-logo">
-        <img src="img/netflix-logo.png" alt="logo">
-      </div>
-      <ul class="central-navbar">
-        <li>Home</li>
-        <li>SerieTV</li>
-        <li>Film</li>
-        <li>Originali</li>
-        <li>Aggiunti di recente</li>
-        <li>La mia lista</li>
-      </ul>
-    </section>
-    <section class="header-right">
-      <div id="select">
-        <input type="text" name="" value="" placeholder="Cerca film">
-        <button type="button" name="button"><i class="nav-actions fas fa-search"></i></button>
-      </div>
-      <p>BAMBINI</p>
-      <a href="#"><i class="fas fa-gift"></i></a>
-      <a href="#"><i class="fas fa-bell"></i></a>
-      <button class="my-account"></button>
-    </section>
+  <div id="root">
+    <header>
+      <section class="header-left">
+        <div class="header-logo">
+          <img src="img/netflix-logo.png" alt="logo">
+        </div>
+        <ul class="central-navbar">
+          <li>Home</li>
+          <li>SerieTV</li>
+          <li>Film</li>
+          <li>Originali</li>
+          <li>Aggiunti di recente</li>
+          <li>La mia lista</li>
+        </ul>
+      </section>
+      <section class="header-right">
+        <div id="select">
+          <input type="text" name="" v-model="searchMovie" placeholder="Cerca film">
+          <button type="button" name="button"><i class="nav-actions fas fa-search"></i></button>
+        </div>
+        <p>BAMBINI</p>
+        <a href="#"><i class="fas fa-gift"></i></a>
+        <a href="#"><i class="fas fa-bell"></i></a>
+        <button class="my-account"></button>
+      </section>
 
-  </header>
-  <main>
-    <div class="movie-card">
-      <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="movie-card">
-      <div class="overlay">
-        <p><span>Titolo:</span> Dragonball</p>
-        <p><span>Titolo originale:</span> Dragonball</p>
-        <p><span>Voto:</span> stelline</p>
-        <p><span>Overview:</span> blablablablablabla</p>
+    </header>
+    <main>
+      <div class="movie-card" v-for="movie in movies">
+        <img :src=" 'https://image.tmdb.org/t/p/w300/' + movie.poster_path" :alt="">
+        <div class="overlay">
+          <p><span>Titolo:</span> {{movie.original_title}}</p>
+          <p><span>Titolo originale:</span> Dragonball</p>
+          <p><span>Voto:</span> stelline</p>
+          <p><span>Overview:</span> blablablablablabla</p>
+        </div>
       </div>
-    </div>
-    <div class="movie-card">
-      <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="movie-card">
-    </div>
-    <div class="movie-card">
-      <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="movie-card">
-    </div>
-  </main>
+    </main>
+  </div>
 
 </body>
 </html>

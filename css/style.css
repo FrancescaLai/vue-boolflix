@@ -47,6 +47,10 @@ header{
   margin-right: 15px;
 }
 
+.header-right input:focus{
+  outline: none;
+}
+
 .header-right button{
   border: 0px;
   background-color: transparent;
