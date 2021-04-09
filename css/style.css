@@ -72,5 +72,46 @@ button .fa-search{
 /* Main */
 main{
   height: 100vh;
-  background-color: grey;
+  background-color: #434343;
+  display: flex;
+  justify-content: center;
+}
+
+.movie-card{
+  height: 300px;
+  width: 200px;
+  margin-top: 20px;
+  margin-left: 20px;
+  position: relative;
+}
+
+.movie-card img{
+  width: 100%;
+}
+
+.overlay{
+  background-color: #000;
+  border: 1px solid grey;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0px;
+  right: 0;
+  display: none;
+}
+
+.overlay p{
+  padding-left: 10px;
+}
+
+.overlay span{
+  font-weight: bold;
+}
+
+.overlay p:first-of-type{
+  padding-top: 20px;
+}
+
+.movie-card:hover .overlay{
+  display: block;
 }
