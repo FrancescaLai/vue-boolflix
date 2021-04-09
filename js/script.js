@@ -16,9 +16,10 @@ var app = new Vue({
         }
       })
       .then((risposta) =>{
-        this.movies = risposta.data.response;
-        console.log(this.movies);
-      }
+        this.movies = risposta.data.results;
+        console.log(risposta);
+        this.searchMovie = "";
+      })
     }
   }
 });

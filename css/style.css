@@ -61,6 +61,10 @@ button .fa-search{
   color: #fff;
 }
 
+.header-right button:focus{
+  outline: none;
+}
+
 .header-right a, p{
   color: #ffff;
   padding-right: 15px;
@@ -75,10 +79,11 @@ button .fa-search{
 }
 /* Main */
 main{
-  height: 100vh;
+  height: 100%;
   background-color: #434343;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .movie-card{
@@ -102,6 +107,7 @@ main{
   bottom: 0px;
   right: 0;
   display: none;
+  overflow: auto;
 }
 
 .overlay p{
@@ -109,6 +115,7 @@ main{
 }
 
 .overlay span{
+  color: red;
   font-weight: bold;
 }
 
