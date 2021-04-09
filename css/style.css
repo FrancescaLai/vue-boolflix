@@ -1,0 +1,76 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Martel Sans', sans-serif;
+  font-size: 14px;
+}
+
+header{
+  height: 85px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Header left */
+.header-left{
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img{
+  width: 100px;
+  margin-left: 25px;
+}
+
+.central-navbar{
+  color: #fff;
+  margin-left: 25px;
+}
+
+.central-navbar li{
+  padding: 6px;
+  display: inline;
+}
+
+/* Header right */
+.header-right{
+  display: flex;
+}
+
+.header-right #select{
+  margin-right: 15px;
+}
+
+.header-right button{
+  border: 0px;
+  background-color: transparent;
+  margin-left: 8px;
+}
+
+button .fa-search{
+  color: #fff;
+}
+
+.header-right a, p{
+  color: #ffff;
+  padding-right: 15px;
+}
+
+.my-account{
+  height: 25px;
+  width: 25px;
+  background-color: pink;
+  border-radius: 5px;
+  border: 0px;
+}
+/* Main */
+main{
+  height: 100vh;
+  background-color: grey;
+}
