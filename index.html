@@ -34,8 +34,8 @@
       </section>
       <section class="header-right">
         <div id="select">
-          <input type="text" name="" v-model="searchMovie" placeholder="Cerca film">
-          <button type="button" name="button"><i class="nav-actions fas fa-search"></i></button>
+          <input type="text" name="cerca" v-model="searchMovie" placeholder="Cerca film">
+          <button type="button" @click="search" name="invio"><i class="nav-actions fas fa-search"></i></button>
         </div>
         <p>BAMBINI</p>
         <a href="#"><i class="fas fa-gift"></i></a>
@@ -46,12 +46,12 @@
     </header>
     <main>
       <div class="movie-card" v-for="movie in movies">
-        <img :src=" 'https://image.tmdb.org/t/p/w300/' + movie.poster_path" :alt="">
+        <img :src=" 'https://image.tmdb.org/t/p/w300' + movie.poster_path" :alt="">
         <div class="overlay">
           <p><span>Titolo:</span> {{movie.original_title}}</p>
-          <p><span>Titolo originale:</span> Dragonball</p>
+          <p><span>Titolo originale:</span> {{movie.original_title}}</p>
           <p><span>Voto:</span> stelline</p>
-          <p><span>Overview:</span> blablablablablabla</p>
+          <p><span>Overview:</span> {{movie.overview}}</p>
         </div>
       </div>
     </main>
