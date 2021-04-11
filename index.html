@@ -47,7 +47,7 @@
     <main>
       <div class="movie-card" v-for="movie in movies">
         <img v-if="movie.poster_path != null" :src=" 'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt="">
-        <p class="not-available" v-else>Poster not available</p>
+        <p v-else class="not-available">Poster not available</p>
         <div class="overlay">
           <p><span>Titolo:</span> {{movie.original_title}}</p>
           <p><span>Titolo originale:</span> {{movie.original_title}}</p>

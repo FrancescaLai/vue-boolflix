@@ -94,7 +94,6 @@ main{
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .movie-card img{
@@ -133,4 +132,8 @@ main{
 .movie-card .lang-flag{
   width: 20px;
   vertical-align: middle;
+}
+
+.movie-card .not-available{
+  padding: 140px 0px;
 }
