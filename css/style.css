@@ -92,6 +92,9 @@ main{
   margin-top: 20px;
   margin-left: 20px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .movie-card img{
