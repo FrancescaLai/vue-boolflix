@@ -126,3 +126,8 @@ main{
 .movie-card:hover .overlay{
   display: block;
 }
+
+.movie-card .lang-flag{
+  width: 20px;
+  vertical-align: middle;
+}
