@@ -1,24 +1,32 @@
 var app = new Vue({
   el: "#root",
   data: {
+    apiKey: "63adf4dc8b14837feb63c3cb75abb457",
+    url: 'https://api.themoviedb.org/3/search/',
+    languages: [
+      "en-US",
+      "it-IT",
+      "fr-FR",
+      "de-DE",
+      "es-ES"
+    ],
+    languageIndex: 0,
     movies: [],
     searchMovie: ""
   },
   methods: {
     search: function(){
-      axios.get('https://api.themoviedb.org/3/search/movie',{
+      axios.get( this.url + 'movie', {
         params: {
-          api_key: "63adf4dc8b14837feb63c3cb75abb457",
+          api_key: this.apiKey,
           query: this.searchMovie,
+          language: this.languages[this.languageIndex],
           page: 1,
-          include_adult: false,
-          language: "en-US",
+          include_adult: false
         }
       })
       .then((risposta) =>{
         this.movies = risposta.data.results;
-        console.log(risposta);
-        this.searchMovie = "";
       })
     },
 
