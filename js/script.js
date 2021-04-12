@@ -12,7 +12,8 @@ var app = new Vue({
     ],
     languageIndex: 0,
     movies: [],
-    searchMovie: ""
+    searchMovie: "",
+    series: [],
   },
   methods: {
     search: function(){
@@ -27,6 +28,9 @@ var app = new Vue({
       })
       .then((risposta) =>{
         this.movies = risposta.data.results;
+        for (var i = 0; i < this.movies.length; i++) {
+          this.movies[i].vote_average = Math.ceil(this.movies[i].vote_average / 2);
+        };
       });
 
       axios.get( this.url + 'tv', {
@@ -39,11 +43,8 @@ var app = new Vue({
         }
       })
       .then((risposta) =>{
-        this.movies = risposta.data.results;
+        this.series = risposta.data.results;
       });
     },
-    starVote: function(){
-      movieVote = this.movie.vote_average % 2;
-    }
   }
 });

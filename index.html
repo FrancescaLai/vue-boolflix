@@ -55,7 +55,7 @@
             <span>Lingua:</span> {{movie.original_language}}
             <img class="lang-flag" :src=" 'img/' + movie.original_language + '.png' " alt="">
           </p>
-          <p><span>Voto:</span> <i class="fas fa-star"></i></p>
+          <p><span>Voto:</span> <i v-for="index in movie.vote_average" class=" colored fas fa-star"></i></p>
           <p><span>Overview:</span> {{movie.overview}}</p>
         </div>
       </div>
