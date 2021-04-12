@@ -34,7 +34,7 @@
       </section>
       <section class="header-right">
         <div id="select">
-          <input type="text" name="cerca" v-model="searchMovie" placeholder="Cerca film">
+          <input @keyup.enter="search" type="text" name="cerca" v-model="searchMovie" placeholder="Cerca film">
           <button type="button" @click="search" name="invio"><i class="nav-actions fas fa-search"></i></button>
         </div>
         <p>BAMBINI</p>

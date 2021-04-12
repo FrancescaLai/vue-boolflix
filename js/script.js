@@ -29,6 +29,6 @@ var app = new Vue({
         this.movies = risposta.data.results;
       })
     },
-
+    
   }
 });
