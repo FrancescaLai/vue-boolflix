@@ -27,8 +27,21 @@ var app = new Vue({
       })
       .then((risposta) =>{
         this.movies = risposta.data.results;
+      });
+
+      axios.get( this.url + 'tv', {
+        params: {
+          api_key: this.apiKey,
+          query: this.searchMovie,
+          language: this.languages[this.languageIndex],
+          page: 1,
+          include_adult: false
+        }
       })
+      .then((risposta) =>{
+        this.movies = risposta.data.results;
+      });
     },
-    
+
   }
 });
