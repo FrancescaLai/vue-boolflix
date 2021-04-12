@@ -55,22 +55,22 @@
             <span>Lingua:</span> {{movie.original_language}}
             <img class="lang-flag" :src=" 'img/' + movie.original_language + '.png' " alt="">
           </p>
-          <p><span>Voto:</span> {{movie.vote_average / 2}}/5</p>
+          <p><span>Voto:</span> <i class="fas fa-star"></i></p>
           <p><span>Overview:</span> {{movie.overview}}</p>
         </div>
       </div>
-      <div class="movie-card" v-for="movie in movies">
-        <img v-if="movie.poster_path != null" :src=" 'https://image.tmdb.org/t/p/w300' + movie.backdrop_path" alt="">
+      <div class="movie-card" v-for="serietv in series">
+        <img v-if="serietv.backdrop_path != null" :src=" 'https://image.tmdb.org/t/p/w300' + serietv.backdrop_path" alt="">
         <p v-else class="not-available">Poster not available</p>
         <div class="overlay">
-          <p><span>Titolo:</span> {{movie.name}}</p>
-          <p><span>Titolo originale:</span> {{movie.original_name}}</p>
+          <p><span>Titolo:</span> {{serietv.name}}</p>
+          <p><span>Titolo originale:</span> {{serietv.original_name}}</p>
           <p>
-            <span>Lingua:</span> {{movie.original_language}}
-            <img class="lang-flag" :src=" 'img/' + movie.original_language + '.png' " alt="">
+            <span>Lingua:</span> {{serietv.original_language}}
+            <img class="lang-flag" :src=" 'img/' + serietv.original_language + '.png' " alt="">
           </p>
-          <p><span>Voto:</span> {{movie.vote_average / 2}}/5</p>
-          <p><span>Overview:</span> {{movie.overview}}</p>
+          <p><span>Voto:</span></p>
+          <p><span>Overview:</span> {{serietv.overview}}</p>
         </div>
       </div>
     </main>

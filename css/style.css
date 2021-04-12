@@ -137,3 +137,7 @@ main{
 .movie-card .not-available{
   padding: 140px 0px;
 }
+
+.fa-star{
+  color: yellow;
+}

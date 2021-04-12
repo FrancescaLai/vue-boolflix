@@ -42,6 +42,8 @@ var app = new Vue({
         this.movies = risposta.data.results;
       });
     },
-
+    starVote: function(){
+      movieVote = this.movie.vote_average % 2;
+    }
   }
 });
