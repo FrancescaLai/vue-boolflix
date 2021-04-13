@@ -60,7 +60,7 @@
         </div>
       </div>
       <div class="movie-card" v-for="serietv in series">
-        <img v-if="serietv.backdrop_path != null" :src=" 'https://image.tmdb.org/t/p/w300' + serietv.backdrop_path" alt="">
+        <img v-if="serietv.backdrop_path != null" :src=" 'https://image.tmdb.org/t/p/780' + serietv.backdrop_path" alt="">
         <p v-else class="not-available">Poster not available</p>
         <div class="overlay">
           <p><span>Titolo:</span> {{serietv.name}}</p>
