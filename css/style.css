@@ -7,15 +7,21 @@
 body{
   font-family: 'Martel Sans', sans-serif;
   font-size: 14px;
-  background-color: #434343;
+  background-color: #FBE0D7;
+  height: 100vh;
 }
 
 header{
   height: 85px;
-  background-color: #000;
+  background-color: #412020;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
 }
 
 /* Header left */
@@ -27,10 +33,10 @@ header{
 .header-logo img{
   width: 100px;
   margin-left: 25px;
+  cursor: pointer;
 }
 
 .central-navbar{
-  color: #fff;
   margin-left: 25px;
 }
 
@@ -39,13 +45,25 @@ header{
   display: inline;
 }
 
+.central-navbar a{
+  color: white;
+  text-decoration: none;
+}
+
 /* Header right */
 .header-right{
   display: flex;
+  align-items: center;
 }
 
 .header-right #select{
   margin-right: 15px;
+}
+
+.header-right input{
+  border-radius: 8px;
+  padding: 3px;
+  border: 0px solid;
 }
 
 .header-right input:focus{
@@ -56,6 +74,8 @@ header{
   border: 0px;
   background-color: transparent;
   margin-left: 8px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 button .fa-search{
@@ -69,6 +89,11 @@ button .fa-search{
 .header-right a, p{
   color: #ffff;
   padding-right: 15px;
+  text-decoration: none;
+}
+
+.header-right a{
+  font-size: 16px;
 }
 
 .my-account{
@@ -83,6 +108,7 @@ main{
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  margin-top: 100px;
 }
 
 .movie-card{
@@ -97,11 +123,12 @@ main{
 
 .movie-card img{
   width: 100%;
+  border-radius: 5px;
 }
 
 .overlay{
-  background-color: #000;
-  border: 1px solid grey;
+  background-color: #B71C23;
+  border: 2px solid #412020;
   position: absolute;
   top: 0;
   left: 0;
@@ -109,6 +136,7 @@ main{
   right: 0;
   display: none;
   overflow: auto;
+  border-radius: 5px;
 }
 
 .overlay p{
@@ -116,7 +144,7 @@ main{
 }
 
 .overlay span{
-  color: red;
+  color: #412020;
   font-weight: bold;
 }
 

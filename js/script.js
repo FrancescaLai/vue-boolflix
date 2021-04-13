@@ -14,6 +14,7 @@ var app = new Vue({
     movies: [],
     searchMovie: "",
     series: [],
+    allshows: [],
   },
   methods: {
     search: function(){
@@ -44,6 +45,10 @@ var app = new Vue({
       })
       .then((risposta) =>{
         this.series = risposta.data.results;
+        for (var i = 0; i < this.series.length; i++) {
+          this.series[i].vote_average = Math.ceil(this.series[i].vote_average / 2);
+          this.allshows = [...this.movies, ...this.series];
+        };
       });
     },
   }
