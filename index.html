@@ -10,7 +10,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
   <!-- Font-awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- Css -->
   <link rel="stylesheet" href="css/style.css">
   <title>Document</title>
@@ -45,13 +47,15 @@
     </header>
     <main>
       <div class="movie-card" v-for="movie in movies">
-        <img v-if="movie.poster_path != null" :src=" 'https://image.tmdb.org/t/p/w342' + movie.poster_path" alt="">
-        <p v-else class="not-available">Poster not available</p>
+        <img class="poster" v-if="movie.poster_path != null" :src=" 'https://image.tmdb.org/t/p/w342' + movie.poster_path" alt="">
+        <div v-else class="missing-movie-card">
+          <p class="not-available">Poster not available</p>
+        </div>
         <div class="overlay">
           <p><span>Titolo:</span> {{movie.original_title}}</p>
           <p><span>Titolo originale:</span> {{movie.original_title}}</p>
           <p>
-            <span>Lingua:</span> {{movie.original_language}}
+            <span>Lingua:</span>
             <img class="lang-flag" :src=" 'img/' + movie.original_language + '.png' " alt="">
           </p>
           <p><span>Voto:</span> <i v-for="index in movie.vote_average" class=" colored fas fa-star"></i></p>
@@ -59,13 +63,15 @@
         </div>
       </div>
       <div class="movie-card" v-for="serietv in series">
-        <img v-if="serietv.backdrop_path != null" :src=" 'https://image.tmdb.org/t/p/780' + serietv.backdrop_path" alt="">
-        <p v-else class="not-available">Poster not available</p>
+        <img class="poster" v-if="serietv.backdrop_path != null" :src=" 'https://image.tmdb.org/t/p/780' + serietv.backdrop_path" alt="">
+        <div v-else class="missing-movie-card">
+          <p class="not-available">Poster not available</p>
+        </div>
         <div class="overlay">
           <p><span>Titolo:</span> {{serietv.name}}</p>
           <p><span>Titolo originale:</span> {{serietv.original_name}}</p>
           <p>
-            <span>Lingua:</span> {{serietv.original_language}}
+            <span>Lingua:</span>
             <img class="lang-flag" :src=" 'img/' + serietv.original_language + '.png' " alt="">
           </p>
           <p><span>Voto:</span><i v-for="i in serietv.vote_average" class=" colored fas fa-star"></i></p>

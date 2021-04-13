@@ -9,6 +9,7 @@ body{
   font-size: 14px;
   background-color: #FBE0D7;
   height: 100vh;
+  cursor: url("https://cdn.shopify.com/s/files/1/0073/4432/4663/files/icon-ios7-heart-512.png?1269"), auto;
 }
 
 header{
@@ -43,6 +44,7 @@ header{
 .central-navbar li{
   padding: 6px;
   display: inline;
+  cursor: pointer;
 }
 
 .central-navbar a{
@@ -64,6 +66,7 @@ header{
   border-radius: 8px;
   padding: 3px;
   border: 0px solid;
+  cursor: pointer;
 }
 
 .header-right input:focus{
@@ -75,6 +78,7 @@ header{
   background-color: transparent;
   margin-left: 8px;
   font-size: 16px;
+  cursor: pointer;
   cursor: pointer;
 }
 
@@ -90,6 +94,7 @@ button .fa-search{
   color: #ffff;
   padding-right: 15px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .header-right a{
@@ -119,16 +124,16 @@ main{
   position: relative;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 
-.movie-card img{
+.movie-card .poster{
   width: 100%;
   border-radius: 5px;
 }
 
 .overlay{
-  background-color: #B71C23;
-  border: 2px solid #412020;
+  background-color: #f1aa9b;
   position: absolute;
   top: 0;
   left: 0;
@@ -137,6 +142,7 @@ main{
   display: none;
   overflow: auto;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .overlay p{
@@ -144,8 +150,8 @@ main{
 }
 
 .overlay span{
+  font-weight: 700;
   color: #412020;
-  font-weight: bold;
 }
 
 .overlay p:first-of-type{
@@ -157,7 +163,8 @@ main{
 }
 
 .movie-card .lang-flag{
-  width: 20px;
+  height: 15px;
+  width: 25px;
   vertical-align: middle;
 }
 
@@ -167,4 +174,17 @@ main{
 
 .colored{
   color: yellow;
+}
+
+.missing-movie-card{
+  height: 300px;
+  width: 200px;
+  background-color: #f1aa9b;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.missing-movie-card p{
+  text-align: center;
+  vertical-align: middle;
 }

@@ -47,9 +47,9 @@ var app = new Vue({
         this.series = risposta.data.results;
         for (var i = 0; i < this.series.length; i++) {
           this.series[i].vote_average = Math.ceil(this.series[i].vote_average / 2);
-          this.allshows = [...this.movies, ...this.series];
         };
       });
+      let allshows = [...this.movies, ...this.series];
     },
   }
 });
