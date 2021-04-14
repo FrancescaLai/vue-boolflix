@@ -117,8 +117,7 @@ main{
 }
 
 .movie-card{
-  height: 300px;
-  width: 200px;
+  width: calc((100% / 5) - 40px);
   margin-top: 20px;
   margin-left: 20px;
   position: relative;
@@ -177,8 +176,8 @@ main{
 }
 
 .missing-movie-card{
-  height: 300px;
-  width: 200px;
+  height: 400px;
+  width: 248px;
   background-color: #f1aa9b;
   border-radius: 5px;
   cursor: pointer;
