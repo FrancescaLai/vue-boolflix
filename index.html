@@ -23,7 +23,7 @@
     <header>
       <section class="header-left">
         <div class="header-logo">
-          <img src="img/netflix-logo.png" alt="logo">
+          <a href="file:///Users/frarvy/Desktop/BOOLEAN/Classe27/vue-boolflix/index.html"><img src="img/netflix-logo.png" alt="logo"></a>
         </div>
         <ul class="central-navbar">
           <a href="#"><li>Home</li></a>
@@ -58,7 +58,7 @@
             <span>Lingua:</span>
             <img class="lang-flag" :src=" 'img/' + movie.original_language + '.png' " alt="">
           </p>
-          <p><span>Voto:</span> <i v-for="index in movie.vote_average" class=" colored fas fa-star"></i></p>
+          <p><span>Voto:</span> <i v-for="star in movie.vote_average" class=" colored fas fa-star"></i></p>
           <p><span>Overview:</span> {{movie.overview}}</p>
         </div>
       </div>
@@ -74,7 +74,7 @@
             <span>Lingua:</span>
             <img class="lang-flag" :src=" 'img/' + serietv.original_language + '.png' " alt="">
           </p>
-          <p><span>Voto:</span><i v-for="i in serietv.vote_average" class=" colored fas fa-star"></i></p>
+          <p><span>Voto:</span><i v-for="star in serietv.vote_average" class=" colored fas fa-star"></i></p>
           <p><span>Overview:</span> {{serietv.overview}}</p>
         </div>
       </div>

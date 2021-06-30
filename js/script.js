@@ -14,7 +14,7 @@ var app = new Vue({
     movies: [],
     searchMovie: "",
     series: [],
-    allshows: [],
+    allShows: [],
   },
   methods: {
     search: function(){
@@ -30,8 +30,13 @@ var app = new Vue({
       .then((risposta) =>{
         this.movies = risposta.data.results;
         for (var i = 0; i < this.movies.length; i++) {
-          this.movies[i].vote_average = Math.ceil(this.movies[i].vote_average / 2);
-        };
+          // qui ho provato ho rendere il numero intero con ParseInt (entrambi i metodi funzionano)
+          this.movies[i].vote_average = parseInt(this.movies[i].vote_average / 2);
+        }
+        this.allShows = [...this.allShows, ...this.movies];
+        this.allShows.sort((a, b) => {
+          return a.vote_average - b.vote_average;
+        });
       });
 
       axios.get( this.url + 'tv', {
@@ -46,10 +51,14 @@ var app = new Vue({
       .then((risposta) =>{
         this.series = risposta.data.results;
         for (var i = 0; i < this.series.length; i++) {
+          // qui ho provato ho rendere il numero intero con Math.Ceil (entrambi i metodi funzionano)
           this.series[i].vote_average = Math.ceil(this.series[i].vote_average / 2);
-        };
+        }
+        this.allShows = [...this.allShows, ...this.series];
+        this.allShows.sort((a, b) => {
+          return a.vote_average - b.vote_average;
+        });
       });
-      let allshows = [...this.movies, ...this.series];
     },
   }
 });
